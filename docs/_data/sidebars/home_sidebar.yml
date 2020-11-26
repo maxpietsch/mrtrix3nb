@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: MRtrix3notebook
       url: core.html
+    - output: web,pdf
+      title: Utility functions
+      url: utils.html
     output: web
     title: mrtrix3nb
   output: web

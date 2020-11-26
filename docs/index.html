@@ -31,7 +31,8 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This file will become your README and also the index of your documentation.</p>
+<p>Build and document MRtrix3-based pipelines in Jupyter</p>
+<p>Based on <a href="https://nbdev.fast.ai">https://nbdev.fast.ai</a></p>
 
 </div>
 </div>
@@ -44,7 +45,14 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>pip install mrtrix3nb</code></p>
+<div class="highlight"><pre><span></span>conda create --name <span class="s1">&#39;yourproject&#39;</span>
+conda activate yourproject
+conda install pip
+pip install jupyter matplotlib numpy
+git clone https://github.com/maxpietsch/mrtrix3nb.git
+pip install -e mrtrix3nb
+jupyter notebook
+</pre></div>
 
 </div>
 </div>
@@ -57,7 +65,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>TODO</p>
+<p>see <a href="https://nbdev.fast.ai/tutorial.html">https://nbdev.fast.ai/tutorial.html</a></p>
 
 </div>
 </div>

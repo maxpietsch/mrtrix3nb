@@ -1,6 +1,7 @@
 {
   "mrtrix3nb": {
     "Overview": "/",
-    "MRtrix3notebook": "core.html"
+    "MRtrix3notebook": "core.html",
+    "Utility functions": "utils.html"
   }
 }

@@ -2,12 +2,22 @@
 > Develop MRtrix3-based pipelines using Jupyter notebooks
 
 
-This file will become your README and also the index of your documentation.
+Build and document MRtrix3-based pipelines in Jupyter
+
+Based on https://nbdev.fast.ai
 
 ## Install
 
-`pip install mrtrix3nb`
+```bash
+conda create --name 'yourproject'
+conda activate yourproject
+conda install pip
+pip install jupyter matplotlib numpy
+git clone https://github.com/maxpietsch/mrtrix3nb.git
+pip install -e mrtrix3nb
+jupyter notebook
+```
 
 ## How to use
 
-TODO
+see https://nbdev.fast.ai/tutorial.html

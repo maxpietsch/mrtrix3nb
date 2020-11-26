@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"plot_dirs": "utils.ipynb"}
 
-modules = []
+modules = ["utils.py"]
 
 doc_url = "https://maxpietsch.github.io/mrtrix3nb/"
 
