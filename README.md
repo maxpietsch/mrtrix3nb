@@ -11,6 +11,7 @@ Based on https://nbdev.fast.ai
 ```bash
 conda create --name 'yourproject'
 conda activate yourproject
+conda install -c mrtrix3 mrtrix3
 conda install pip
 pip install jupyter matplotlib numpy
 git clone https://github.com/maxpietsch/mrtrix3nb.git

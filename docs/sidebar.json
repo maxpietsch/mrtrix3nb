@@ -2,6 +2,7 @@
   "mrtrix3nb": {
     "Overview": "/",
     "MRtrix3notebook": "core.html",
+    "Registration and transformation tools": "reg.html",
     "Utility functions": "utils.html"
   }
 }

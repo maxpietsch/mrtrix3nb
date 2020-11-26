@@ -2,9 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"plot_dirs": "utils.ipynb"}
+index = {"Comp": "00_core.ipynb",
+         "warpconvert_fsl2mrtrix": "reg.ipynb",
+         "plot_dirs": "utils.ipynb"}
 
-modules = ["utils.py"]
+modules = ["core.py",
+           "reg.py",
+           "utils/vis.py"]
 
 doc_url = "https://maxpietsch.github.io/mrtrix3nb/"
 

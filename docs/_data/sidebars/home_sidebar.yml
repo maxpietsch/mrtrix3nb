@@ -13,6 +13,9 @@ entries:
       title: MRtrix3notebook
       url: core.html
     - output: web,pdf
+      title: Registration and transformation tools
+      url: reg.html
+    - output: web,pdf
       title: Utility functions
       url: utils.html
     output: web
