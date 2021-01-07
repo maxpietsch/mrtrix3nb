@@ -4,6 +4,6 @@
     "MRtrix3notebook": "core.html",
     "mrtrix image IO": "mif.html",
     "Registration and transformation tools": "reg.html",
-    "Utility functions": "utils.html"
+    "Utility functions": "vis.html"
   }
 }

@@ -20,7 +20,7 @@ entries:
       url: reg.html
     - output: web,pdf
       title: Utility functions
-      url: utils.html
+      url: vis.html
     output: web
     title: mrtrix3nb
   output: web
