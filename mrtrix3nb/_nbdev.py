@@ -2,11 +2,26 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Comp": "00_core.ipynb",
+index = {"exists": "00_core.ipynb",
+         "Comp": "00_core.ipynb",
+         "Image": "utils.ipynb",
+         "load_mrtrix": "utils.ipynb",
+         "save_mrtrix": "utils.ipynb",
          "warpconvert_fsl2mrtrix": "reg.ipynb",
-         "plot_dirs": "utils.ipynb"}
+         "get_turbo_cm": "utils.ipynb",
+         "plot_dirs": "utils.ipynb",
+         "response_to_r": "utils.ipynb",
+         "polarplotstyle": "utils.ipynb",
+         "loadrf": "utils.ipynb",
+         "plot_responses": "utils.ipynb",
+         "ntheta": "utils.ipynb",
+         "theta_1d": "utils.ipynb",
+         "phi_1d": "utils.ipynb",
+         "xyz_2d": "utils.ipynb",
+         "plot_response_coef": "utils.ipynb"}
 
 modules = ["core.py",
+           "utils/mif.py",
            "reg.py",
            "utils/vis.py"]
 
