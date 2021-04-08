@@ -368,7 +368,7 @@ nb_path: "vis.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="plots" class="doc_header"><code>plots</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/utils/vis.py#L424" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>plots</code>(<strong><code>ims</code></strong>, <strong><code>figsize</code></strong>=<em><code>(18, 6)</code></em>, <strong><code>dpi</code></strong>=<em><code>70</code></em>, <strong><code>rows</code></strong>=<em><code>1</code></em>, <strong><code>titles</code></strong>=<em><code>None</code></em>, <strong><code>syncv</code></strong>=<em><code>True</code></em>, <strong><code>colbar</code></strong>=<em><code>True</code></em>, <strong><code>vclamp</code></strong>=<em><code>(None, None)</code></em>, <strong><code>divcentre</code></strong>=<em><code>None</code></em>, <strong><code>divvclamp</code></strong>=<em><code>(-inf, inf)</code></em>, <strong><code>divvsync</code></strong>=<em><code>False</code></em>, <strong><code>divsymmetric</code></strong>=<em><code>False</code></em>, <strong><code>rot</code></strong>=<em><code>True</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>maskcolor</code></strong>=<em><code>'yellow'</code></em>, <strong><code>maskstyle</code></strong>=<em><code>{}</code></em>, <strong><code>ylabels</code></strong>=<em><code>None</code></em>, <strong><code>cmap_uni</code></strong>=<em><code>'gray'</code></em>, <strong><code>axes_pad</code></strong>=<em><code>0.05</code></em>, <strong><code>title_fontsize</code></strong>=<em><code>14</code></em>, <strong><code>label_fontsize</code></strong>=<em><code>12</code></em>, <strong><code>pad</code></strong>=<em><code>False</code></em>, <strong><code>syncvfuns</code></strong>=<em><code>[&lt;function &lt;lambda&gt; at 0x7f80e0604f70&gt;, &lt;function &lt;lambda&gt; at 0x7f80e0608040&gt;]</code></em>, <strong><code>vmin_vmax</code></strong>=<em><code>None</code></em>)</p>
+<h4 id="plots" class="doc_header"><code>plots</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/utils/vis.py#L424" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>plots</code>(<strong><code>ims</code></strong>, <strong><code>figsize</code></strong>=<em><code>(18, 6)</code></em>, <strong><code>dpi</code></strong>=<em><code>70</code></em>, <strong><code>rows</code></strong>=<em><code>1</code></em>, <strong><code>titles</code></strong>=<em><code>None</code></em>, <strong><code>syncv</code></strong>=<em><code>True</code></em>, <strong><code>colbar</code></strong>=<em><code>True</code></em>, <strong><code>vclamp</code></strong>=<em><code>(None, None)</code></em>, <strong><code>divcentre</code></strong>=<em><code>None</code></em>, <strong><code>divvclamp</code></strong>=<em><code>(-inf, inf)</code></em>, <strong><code>divvsync</code></strong>=<em><code>False</code></em>, <strong><code>divsymmetric</code></strong>=<em><code>False</code></em>, <strong><code>rot</code></strong>=<em><code>True</code></em>, <strong><code>mask</code></strong>=<em><code>None</code></em>, <strong><code>maskcolor</code></strong>=<em><code>'yellow'</code></em>, <strong><code>maskstyle</code></strong>=<em><code>{}</code></em>, <strong><code>ylabels</code></strong>=<em><code>None</code></em>, <strong><code>cmap_uni</code></strong>=<em><code>'gray'</code></em>, <strong><code>axes_pad</code></strong>=<em><code>0.05</code></em>, <strong><code>title_fontsize</code></strong>=<em><code>14</code></em>, <strong><code>label_fontsize</code></strong>=<em><code>12</code></em>, <strong><code>pad</code></strong>=<em><code>False</code></em>, <strong><code>syncvfuns</code></strong>=<em><code>[&lt;function &lt;lambda&gt; at 0x7fb9d0757040&gt;, &lt;function &lt;lambda&gt; at 0x7fb9d07570d0&gt;]</code></em>, <strong><code>vmin_vmax</code></strong>=<em><code>None</code></em>)</p>
 </blockquote>
 
 </div>
@@ -395,7 +395,138 @@ nb_path: "vis.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plots</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">20</span><span class="p">))])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>&lt;ipython-input-7-3181f75d9e67&gt;:210: MatplotlibDeprecationWarning: Since 3.2, mpl_toolkits&#39;s own colorbar implementation is deprecated; it will be removed two minor releases later.  Set the &#39;mpl_toolkits.legacy_colorbar&#39; rcParam to False to use Matplotlib&#39;s default colorbar implementation and suppress this deprecation warning.
+  cbar = ax.cax.colorbar(im, drawedges=False)
+/Users/mp/anaconda3/envs/notebook/lib/python3.8/site-packages/mpl_toolkits/axes_grid1/axes_grid.py:46: MatplotlibDeprecationWarning: 
+The mpl_toolkits.axes_grid1.colorbar module was deprecated in Matplotlib 3.2 and will be removed two minor releases later. Use matplotlib.colorbar instead.
+  from .colorbar import Colorbar
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;vmin_vmax&#39;: [array([-2.30265834]), array([2.40414839])]}</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhEAAAFLCAYAAABoY94eAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/Il7ecAAAACXBIWXMAAArEAAAKxAFmbYLUAAAYKElEQVR4nO3de7CXVb348bVERUlSURBQvBRoXDtCHsWfk5mIZiiNYhFYOWHWNOTkoCNYTZgpx7IyLxmJoeYkeS12aiSIF8DbkfCGAVtTLhKiZaWIo/L8/jg6Ux1E9/qAPA/n9ZrZM6C9n7VJ2H5c37X2N1dVlQAA2mqrzf0JAADNZIgAAIoYIgCAIoYIAKCIIQIAKLL15v4EAIB/lXMeWNpWVTV/Y34uG7LBIeL+++8P3f/829/+FsnTH//4x1Afub7au3fv0Nr33HNPqF+yZEmo32abbUL9d77znVDfv3//UL9ixYpQ39LSUtzecsstobWnT58e6ocMGRLqhw8fHur79esX6i+++OJQf+yxxxa3ixYtCq09aNCgUB/9vfP444+H+kMPPTTU77rrrqF+p512CvXt2rUrbtu3bx9ae+3ataH+lVdeCfVjxozJ//zzTp06PdS9e/eiZ+WcV1VV1TX0Cb1LdiIAoGZ69eqV7rvvvqI25/z0xv1s3p4hAgBqqAnfDNIQAQA1ZIgAANqsqipDBABQpglDhO8TAQAUsRMBADXUhJ0IQwQA1JAhAgAoYogAANqsKbczHKwEAIrYiQCAGmrCToQhAgBqyBABABRp/BBx+eWXhx4efVvYxYsXh/r588vfUn3s2LGhtefMmRPqTzjhhFA/b968UP/ggw+G+nPOOSfUf//73w/1V199dXF75JFHhtZes2ZNqI++pfENN9wQ6h955JFQf+CBB4b68ePHF7fXXnttaO2nn3461Ed/7bvsskuo7927d6jv1KlTqL/qqqtC/YABA4rbyNuIp5TSJz/5yVA/bdq0UP/vHKwEALZoXs4AgBpqwk6EIQIAasgQAQAUMUQAAEUMEQBAm7mdAQBs0QwRAFBDb+1GtPVjQ3LOPXLOd+acF+acH8k5h74pkZczAKCGNtHLGa+nlL5eVdWCnHPXlNJDOedbq6p6ueRhhggAqKFNMURUVbUypbTyzR//Oef8fEqpU0rJEAEAW4pNfbAy5zwopdSuqqplpc9wJgIAtiydc873vflx8vr+BznnTimlq1NKp0QWshMBADUTvOK5uqqqg97ub+ac26eUfp1S+q+qqkLv1miIAIAa2hQvZ+Scc0rpypTSHVVV/SL6PC9nAEANbYorniml/5dS+kxK6VM55wVvfvQv/Rw3uBMxfPjw0uemlFK65557Qv3EiRND/ZQpU4rbXXfdNbR29Nf+4osvhvpx48aF+h122CHU9+3bN9SvWbMm1C9cuLC47dixY2jtXXbZJdT37Nkz1A8YMCDUd+vWLdQ/+eSTof7AAw8sbiN/5lOK/3+3ePHiUL/99tuH+ssuuyzUr1ixItSPHj061O+zzz7F7TbbbBNae/r06aF+/vz5oX59NtHtjDlpI24g2IkAAIo4EwEANdOU984wRABADRkiAIAihggAoEgThggHKwGAInYiAKCGmrATYYgAgJpxOwMAKGaIAACKNGGIcLASAChiJwIAaqgJOxGGCACoGQcrAYBihggAoEjjh4i//vWvoYfvscceof6aa64J9YMHDy5ub7755tDal112WaifMGFCqL/xxhtD/dChQ0P97bffHurnzZsX6hcvXlzcXnLJJaG1X3vttVC/3377hfrnn38+1E+aNCnU33HHHaF+6tSpxe2YMWNCa69bty7Ujxw5MtT/+te/DvWjRo0K9UuXLg31zz33XKh/4YUXituPfvSjobVvu+22UD9o0KBQvz5NGCLczgAAing5AwBqqAk7EYYIAKgZtzMAgGKGCACgSBOGCAcrAYAidiIAoIaasBNhiACAGjJEAABt5nYGAFCsCUOEg5UAQBE7EQBQQ03YiTBEAEANGSIAgDZzsBIAKNb4IaJv376hhz/00EOhfsiQIaF++vTpxW27du1Ca996662h/lOf+lSoX7VqVahftmxZqH/wwQdD/Y9//ONQf9111xW3S5YsCa19zDHHhPoOHTqE+uifu7333jvUjxw5MtSvW7euuO3YsWNo7fHjx4f6YcOGhfr27duH+rvvvjvUL1q0KNRHf+//8Ic/LG7333//0NqHHHJIqJ87d26obyo7EQBQQ43fiQAANg9DBABQxBABALRZU25n+I6VAEAROxEAUENN2IkwRABADRkiAIAihggAoM2acrDSEAEANdSEIcLtDACgiJ0IAKihJuxEGCIAoIYMEQBAkcYPES0tLbGHbx2bUVpbW0P9tttu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EQ5WAgBF7EQAQA01YSdig0PEOeecE3r4jTfeGOovvvjiUL9w4cLi9q677gqt/dWvfjXUv/LKK6F+ypTit4dPKaXUrVu3UN/a2hrqV61aFep33HHH4nbUqFGhtX/729+G+sMPPzzUX3XVVaF+2LBhof573/teqB8/fnxx+9nPfja0dvTX/uSTT4b6n/zkJ6G+paUl1A8cODDU33///aH+nnvuKW4vvPDC0NqrV68O9XvvvXeoX5/GDxEAwHvP7QwAoFgThggHKwGAInYiAKCGmrATYYgAgBoyRAAAbeZgJQBQzBABABRpwhDhdgYAUMROBADUUBN2IgwRAFBDhggAoM3czgAAijVhiHCwEgAoYicCAGqoCTsRGxwiFixYEHr48ccfH+rfeOONUD9r1qzidt999w2t3bNnz1C/9dax+a59+/ah/sknnwz1t99+e6jv06dPqB8zZkxxO27cuNDaxx57bKifPHlyqB86dGioj37hOu+880J99+7di9uXX345tPa6detC/aWXXhrqu3TpEuqjX3N///vfh/oPfvCDob61tbW4HTt2bGjtUaNGhfoVK1aE+tNOO+1//bXGDxEAwOZhiAAA2qwptzMcrAQAitiJAIAaasJOhCECAGrIEAEAFDFEAABt5mAlALBFsxMBADXUhJ0IQwQA1JAhAgAoYogAAIo0YYhwsBIAKGInAgBqpilXPA0RAFBDjR8izj///NDD58yZE+pvuummUP/lL3+5uL388stDa0ffW/6JJ54I9TNmzAj1nTt3DvW/+93vQv2pp54a6idPnlzcLlmyJLT2T3/601C/3377hfq1a9eG+m233TbUDx48ONTfddddxW30z83w4cND/W677Rbq//CHP4T6ESNGhPouXbqE+paWllDfu3fv4jb6Nad///6h/pRTTgn169P4IQIA2DwMEQBAmzXlTITbGQBAETsRAFBDTdiJMEQAQA0ZIgCAIoYIAKBIE4YIBysBgCJ2IgCgZppyxdMQAQA1ZIgAAIoYIgCAIk0YIhysBACK2IkAgBpqwk6EIQIAamaLuJ0xderU0MO/+93vhvqJEyeG+gMOOKC4jbyvfUop/elPfwr1S5cuDfVDhgwJ9X/5y19C/YQJE0L93//+91DfoUOH4nb77bcPrT169OhQ37Nnz1Df0tIS6gcOHBjqly1bFuqvvPLK4nbPPfcMrX3nnXeG+q5du4b6nXbaKdSvXr061D/zzDOhvm/fvqF+9uzZxe3TTz8dWjv6L+zon9v1rd/4IQIA2DyaMEQ4WAkAFDFEAEANvXUuoq0fpXLOl+acV+Wc//vdNoYIAKiZ0gEi+BLIL1NKR7clcCYCAGrovT4TUVXV3Jzz3m1pDBEAUENNOFhpiACALUvnnPN9b/54SlVVU976GznnBWn9/+4fWlXVs21dyBABADUU2IlYXVXVQW/zzP8o/oTWwxABADXUhJcz3M4AgJrZHLczcs5XppTuTSkNyDkvzzmf8E6NnQgAqKHNcDvjpLY2diIAgCJ2IgCghppwJsIQAQA11Pgh4rDDDgs9vFevXqF++fLlof79739/cfvnP/85tPYRRxwR6ltbW0P9okWLQv3ZZ58d6s8666xQf9BB672d9K499NBDxW379u1Da0ffRn3y5MmhvlOnTqF+7ty5of7BBx8M9ZFf/2677RZae4899gj1++yzT6jfaqvYK8wjR44M9b179w71Rx55ZKiPvJV79M/tgAEDQv2IESNC/b/bCN/C+j1hJwIAasgQAQAUacIQ4XYGAFDETgQA1FATdiIMEQBQQ4YIAKDN3M4AAIo1YYhwsBIAKGInAgBqqAk7EYYIAKghQwQA0GYOVgIAxZowRDhYCQAUsRMBADXUhJ0IQwQA1FDjh4hZs2aFHn7mmWeG+q5du4b63r17F7czZ84Mrf3444+H+l69eoX6D33oQ6H+K1/5SqgfO3ZsqL/mmmtCfb9+/YrbdevWhdb+zW9+E+rfeOONUH/YYYeF+hkzZoT6pUuXhvrjjz++uD355JNDa7e2tob66667LtQPHjw41C9YsCDU33LLLaF+zZo1oX7hwoXFbfRrzuzZs0P9r371q1C/vt/3jR8iAID3XlNuZzhYCQAUsRMBADXUhJ0IQwQA1JAhAgAoYogAAIo0YYhwsBIAKGInAgBqpilXPA0RAFBDhggAoIghAgAoYogAANqsKWci3M4AAIrYiQCAGmrCToQhAgBqqPFDxL333ht6+PDhw0P9SSedFOpHjx5d3C5fvjy09rPPPhvqx4wZE+rHjx8f6vv06RPqH3744VA/Z86cUH/zzTcXt8cdd1xo7UMOOSTUR3/tjz76aKj/2Mc+Fuo7d+4c6iNfN84888zQ2gcffHCo79GjR6jfdtttQ/3ixYtD/Zo1a0L9Sy+9FOr79etX3H7jG98IrT1q1KhQv9dee4X69Wn8EAEAbB5NGCIcrAQAitiJAICaacoVT0MEANSQIQIAKGKIAACKNGGIcLASAChiJwIAasbBSgCgmCECAChiiAAAijRhiHCwEgAoYicCAGqoCTsRhggAqBm3MwCAYo0fInbffffQw2+88cZQ379//1Df2tpa3H74wx8OrX3nnXeG+gsvvDDUL126NNRfeumlof6mm24K9Z/5zGdC/f7771/cdurUKbT2j370o1Af+X2bUkqdO3cO9dOmTQv1H//4x0P9vHnzitthw4aF1l6+fHmonzVrVqh/4YUXQn30987YsWND/fTp00P9wQcfXNy2tLSE1u7YsWOof+2110L9+jRhiHCwEgAo4uUMAKihJuxEGCIAoIYMEQBAm7mdAQAUM0QAAEWaMES4nQEAFDFEAEANvXUuoq0fJXLOHXLOt+Wc/5hzfjzn/LV303k5AwBqZjMdrPyvqqruyjnvkFL675zzbVVVbfA7mBkiAKCG3sshoqqqNSmlu9788Us550UppW4pJUMEADTN5jpYmXPukVIakFKa/07/W0MEAGxZOuec73vzx1Oqqpry1t/IOS9I6/93/9Cqqp7NObdPKf0qpXRGVVUvv9NChggAqKHATsTqqqoOeptn/sfbRTnnnFK6OqV0a1VVN7ybhQwRAFBDm+HljEkppTVVVX333QaueAJAzZRe7wxc8dwjpXRmSuk/c84L3vw48h27DS04bdq00Bi09daxjY7bb7891H/pS18qbkeMGBFa+6yzzgr1CxYsCPX9+vUL9UuWLAn18+bNC/VnnHFGqG9paSlut9tuu9DaO+64Y6gfP358qD/55JND/cCBA0P9U089FepPP/304vaiiy4Krf3www+H+t69e4f6Tp06hfro791Vq1aF+o4dO4b6ZcuWFbc9evQIrR39mnvJJZeE+j59+uR//nm7du2qDh06FD3rpZdeuv/tXs7Y2OxEAABFnIkAgBpqwntnGCIAoIYMEQBAm22mb3vdZoYIAKihJgwRDlYCAEXsRABADTVhJ8IQAQA1ZIgAAIoYIgCANmvK7QwHKwGAInYiAKCGmrATYYgAgBoyRAAARQwRAECRJgwRuQmfJAD8X5JzfiGltKIw71JVVdeN+fm8HUMEAFDEFU8AoIghAgAoYogAAIoYIgCAIoYIAKDI/wfKQQIsC69ewAAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data1&quot;</span><span class="p">,</span> <span class="s2">&quot;data2&quot;</span><span class="p">,</span> <span class="s2">&quot;data3&quot;</span><span class="p">,</span> <span class="s2">&quot;data4&quot;</span><span class="p">]</span>
+<span class="n">checkboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">identifier</span><span class="o">=</span><span class="s1">&#39;bogus&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="n">checkboxes</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;h2&gt;INFO&lt;/h2&gt;&#39;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<h2>INFO</h2>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">cb</span><span class="o">.</span><span class="n">description</span> <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="n">checkboxes</span> <span class="k">if</span> <span class="n">cb</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -408,21 +539,114 @@ nb_path: "vis.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>nbdev_build_lib
-Converted 00_core.ipynb.
-Converted index.ipynb.
-Converted mif.ipynb.
-Converted reg.ipynb.
-Converted vis.ipynb.
-touch mrtrix3nb
-nbdev_build_docs
-converting: /Users/mp/Dropbox/mrtrix3nb/vis.ipynb
-converting /Users/mp/Dropbox/mrtrix3nb/index.ipynb to README.md
-touch docs
+<pre>[]
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># def make_box_layout():</span>
+<span class="c1">#      return widgets.Layout(</span>
+<span class="c1">#         border=&#39;solid 1px black&#39;,</span>
+<span class="c1">#         margin=&#39;0px 10px 10px 0px&#39;,</span>
+<span class="c1">#         padding=&#39;5px 5px 5px 5px&#39;</span>
+<span class="c1">#      )</span>
+
+<span class="c1"># class Sines(widgets.HBox):</span>
+     
+<span class="c1">#     def __init__(self):</span>
+<span class="c1">#         super().__init__()</span>
+<span class="c1">#         output = widgets.Output()</span>
+        
+<span class="c1">#         self.x = np.linspace(0, 2 * np.pi, 100)</span>
+<span class="c1">#         initial_color = &#39;#FF00DD&#39;</span>
+
+<span class="c1">#         with output:</span>
+<span class="c1">#             self.fig, self.ax = plt.subplots(constrained_layout=True, figsize=(5, 3.5))</span>
+<span class="c1">#         self.line, = self.ax.plot(self.x, np.sin(self.x), initial_color)</span>
+         
+<span class="c1">#         self.fig.canvas.toolbar_position = &#39;bottom&#39;</span>
+<span class="c1">#         self.ax.grid(True)</span>
+        
+<span class="c1">#         # define widgets</span>
+<span class="c1">#         int_slider = widgets.IntSlider(</span>
+<span class="c1">#             value=1, </span>
+<span class="c1">#             min=0, </span>
+<span class="c1">#             max=10, </span>
+<span class="c1">#             step=1, </span>
+<span class="c1">#             description=&#39;freq&#39;</span>
+<span class="c1">#         )</span>
+<span class="c1">#         color_picker = widgets.ColorPicker(</span>
+<span class="c1">#             value=initial_color, </span>
+<span class="c1">#             description=&#39;pick a color&#39;</span>
+<span class="c1">#         )</span>
+<span class="c1">#         text_xlabel = widgets.Text(</span>
+<span class="c1">#             value=&#39;&#39;, </span>
+<span class="c1">#             description=&#39;xlabel&#39;, </span>
+<span class="c1">#             continuous_update=False</span>
+<span class="c1">#         )</span>
+<span class="c1">#         text_ylabel = widgets.Text(</span>
+<span class="c1">#             value=&#39;&#39;, </span>
+<span class="c1">#             description=&#39;ylabel&#39;, </span>
+<span class="c1">#             continuous_update=False</span>
+<span class="c1">#         )</span>
+ 
+<span class="c1">#         controls = widgets.VBox([</span>
+<span class="c1">#             int_slider, </span>
+<span class="c1">#             color_picker, </span>
+<span class="c1">#             text_xlabel, </span>
+<span class="c1">#             text_ylabel</span>
+<span class="c1">#         ])</span>
+<span class="c1">#         controls.layout = make_box_layout()</span>
+         
+<span class="c1">#         out_box = widgets.Box([output])</span>
+<span class="c1">#         output.layout = make_box_layout()</span>
+ 
+<span class="c1">#         # observe stuff</span>
+<span class="c1">#         int_slider.observe(self.update, &#39;value&#39;)</span>
+<span class="c1">#         color_picker.observe(self.line_color, &#39;value&#39;)</span>
+<span class="c1">#         text_xlabel.observe(self.update_xlabel, &#39;value&#39;)</span>
+<span class="c1">#         text_ylabel.observe(self.update_ylabel, &#39;value&#39;)</span>
+         
+<span class="c1">#         text_xlabel.value = &#39;x&#39;</span>
+<span class="c1">#         text_ylabel.value = &#39;y&#39;</span>
+         
+ 
+<span class="c1">#         # add to children</span>
+<span class="c1">#         self.children = [controls, output]</span>
+     
+<span class="c1">#     def update(self, change):</span>
+<span class="c1">#         &quot;&quot;&quot;Draw line in plot&quot;&quot;&quot;</span>
+<span class="c1">#         self.line.set_ydata(np.sin(change.new * self.x))</span>
+<span class="c1">#         self.fig.canvas.draw()</span>
+ 
+<span class="c1">#     def line_color(self, change):</span>
+<span class="c1">#         self.line.set_color(change.new)</span>
+ 
+<span class="c1">#     def update_xlabel(self, change):</span>
+<span class="c1">#         self.ax.set_xlabel(change.new)</span>
+ 
+<span class="c1">#     def update_ylabel(self, change):</span>
+<span class="c1">#         self.ax.set_ylabel(change.new)</span>
+         
+         
+<span class="c1"># Sines()</span>
+<span class="c1"># # plt.show()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

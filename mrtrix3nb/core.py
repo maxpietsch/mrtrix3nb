@@ -51,7 +51,7 @@ class Comp:
         ps = psutil.Process(pid)
         ps.nice(19)
 
-    def __init__(self, dry_run=False, env=os.environ.copy(), loglevel='INFO', progress=True, nice=False):
+    def __init__(self, dry_run=False, env=None, loglevel='INFO', progress=True, nice=False):
         self.dry_run = dry_run
 
         self.jobs = deque()
@@ -64,6 +64,8 @@ class Comp:
         if python is None:
             raise ImportError("could not find python in Path")
 
+        if env is None:
+            env = os.environ.copy()
         if 'PATH' in env:
             env['PATH'] = os.pathsep.join([str(Path(python).parent), env.get('PATH')])
         self.logger.debug('env: '+pprint.pformat(env))

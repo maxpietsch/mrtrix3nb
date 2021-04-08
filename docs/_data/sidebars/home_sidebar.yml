@@ -13,6 +13,9 @@ entries:
       title: MRtrix3notebook
       url: core.html
     - output: web,pdf
+      title: Title
+      url: DuplicateFileFinder.html
+    - output: web,pdf
       title: mrtrix image IO
       url: mif.html
     - output: web,pdf

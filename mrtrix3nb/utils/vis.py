@@ -602,7 +602,7 @@ def plots(ims, figsize=(18,6), dpi=70, rows=1, titles=None, syncv=True, colbar=T
         if colbar and i%cols == 0:
             cbar = ax.cax.colorbar(im, drawedges=False)
             # cbar.colorbar.outline.set_visible(False) # .set_linewidth(0)
-            cbar = grid.cbar_axes[row].colorbar(im, drawedges=False, format='%.3g')
+#             cbar = grid.cbar_axes[row].colorbar(im, drawedges=False, format='%.3g')
 
         # if row_labels is not None and i%cols == 0:
         #   try:
@@ -611,5 +611,3 @@ def plots(ims, figsize=(18,6), dpi=70, rows=1, titles=None, syncv=True, colbar=T
         #     print('Failed to set label: '+ str(e))
 
     return {'vmin_vmax':[np.array(vmin), np.array(vmax)]}
-
-
