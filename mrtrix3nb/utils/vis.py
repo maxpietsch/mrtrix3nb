@@ -600,7 +600,9 @@ def plots(ims, figsize=(18,6), dpi=70, rows=1, titles=None, syncv=True, colbar=T
         plt.grid(False)
 
         if colbar and i%cols == 0:
-            cbar = ax.cax.colorbar(im, drawedges=False)
+#             cbar = ax.cax.colorbar(im, drawedges=False)
+            cbar = plt.colorbar(im, cax=ax.cax, drawedges=False)
+
             # cbar.colorbar.outline.set_visible(False) # .set_linewidth(0)
 #             cbar = grid.cbar_axes[row].colorbar(im, drawedges=False, format='%.3g')
 
