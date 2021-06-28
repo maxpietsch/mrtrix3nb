@@ -3,11 +3,6 @@
 __all__ = ['sh2power', 'sh2spectrum', 'sh2RISH', 'amp2shellagg', 'amp2mssh']
 
 # Cell
-from .utils.mif import Image, load_mrtrix
-import numpy as np
-from .core import Comp
-
-# Cell
 
 '''
 process spherical harmonics images in MRtrix format.
@@ -17,6 +12,7 @@ process spherical harmonics images in MRtrix format.
 
 
 def sh2power(R, lmax):
+    import numpy as np
     def index (l, m):
         return int(l * (l+1) / 2 + m)
 
@@ -31,6 +27,7 @@ def sh2power(R, lmax):
 
 def sh2spectrum(R, lmax=6):
     """ L2 norm (mean and σ): expectation and square root of sum of squares in each frequency band (order)"""
+    import numpy as np
     # https://en.wikipedia.org/wiki/Spherical_harmonics#Power_spectrum_in_signal_processing
     # square root of energy https://www.dsprelated.com/freebooks/mdft/Signal_Metrics.html
     return np.sqrt(sh2power(R, lmax) * np.pi * 4)
@@ -38,11 +35,18 @@ def sh2spectrum(R, lmax=6):
 
 def sh2RISH(R, lmax):
     """sum of squares in each frequency band (order)"""
+    import numpy as np
     # Kazhdan, M., Funkhouser, T., Rusinkiewicz, S.: Rotation invariant spherical harmonic representation of 3D shape descriptors. Symposium on Geometry Processing (2003)
     return sh2power(R, lmax) * np.pi * 4
 
 
-def amp2shellagg(dwi, fun=np.mean, grad=None, btol=50.):
+def amp2shellagg(dwi, fun='mean', grad=None, btol=50.):
+    import numpy as np
+    if fun == 'mean':
+        fun = np.mean
+    else:
+        raise NotImplementedError(str(fun))
+
     if isinstance(dwi, str):
         dwi = load_mrtrix(dwi)
         data = dwi.data
@@ -59,6 +63,7 @@ def amp2shellagg(dwi, fun=np.mean, grad=None, btol=50.):
         bs = np.round(bs / float(btol)) * btol
     ubs = sorted(np.unique(bs).tolist())
 
+
     agg = np.zeros(list(dwi.shape[:3])+[len(ubs)], dtype=np.float32)
     for ib, b in enumerate (ubs):
         agg[...,ib] = fun(data[...,bs==b], axis=3)
@@ -67,6 +72,9 @@ def amp2shellagg(dwi, fun=np.mean, grad=None, btol=50.):
 
 import tempfile
 def amp2mssh(dwi, grad=None, btol=50., lmax_callback=None):
+    from .utils.mif import Image, load_mrtrix
+    from .core import Comp
+    import numpy as np
     """returns list with one sh series per b-value"""
     shs = []
     with tempfile.TemporaryDirectory() as tmpdirname:
