@@ -20,7 +20,8 @@ def sh2power(R, lmax):
     for il, l in enumerate(range(0, lmax+2, 2)):
         for m in range(-l, l+1):
             idx = index (l, m)
-            power[...,il] += R[...,idx]**2
+            if R.shape[-1] > idx:
+                power[...,il] += R[...,idx]**2
         power[...,il] /= (np.pi * 4)
     return power
 
