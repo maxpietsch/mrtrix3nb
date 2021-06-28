@@ -13,14 +13,14 @@ entries:
       title: MRtrix3notebook
       url: core.html
     - output: web,pdf
-      title: Title
-      url: DuplicateFileFinder.html
-    - output: web,pdf
       title: mrtrix image IO
       url: mif.html
     - output: web,pdf
       title: Registration and transformation tools
       url: reg.html
+    - output: web,pdf
+      title: mrtrix-format spherical harmonics image handling
+      url: sh.html
     - output: web,pdf
       title: Utility functions
       url: vis.html

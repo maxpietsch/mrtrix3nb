@@ -2,9 +2,9 @@
   "mrtrix3nb": {
     "Overview": "/",
     "MRtrix3notebook": "core.html",
-    "Title": "DuplicateFileFinder.html",
     "mrtrix image IO": "mif.html",
     "Registration and transformation tools": "reg.html",
+    "mrtrix-format spherical harmonics image handling": "sh.html",
     "Utility functions": "vis.html"
   }
 }

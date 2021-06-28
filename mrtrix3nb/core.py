@@ -6,11 +6,15 @@ __all__ = ['exists', 'Comp']
 import os
 from pathlib import Path, PurePath
 
-def exists(s, minsize_bytes=100, isdir=False):
+def exists(s, minsize_bytes=100, isdir=False, force=False):
     # check if `s` exists (file or dir if `isdir`) and has at least `minsize_bytes` bytes
     if isdir:
-        return os.path.isdir(s)
+        ex = os.path.isdir(s)
+        if force and not ex:
+            raise IOError(s)
+        return ex
     if not os.path.isfile(s):
+        if force: raise IOError(s)
         return False
     if isinstance(s, PurePath):
         s = str(s)
@@ -18,6 +22,8 @@ def exists(s, minsize_bytes=100, isdir=False):
         size = Path(s).stat().st_size
         if size < minsize_bytes:
             print(s, 'size', size, 'Bytes')
+            if force:
+                raise IOError(s)
             return False
     return True
 
@@ -80,7 +86,11 @@ class Comp:
     def _execute(self, cmd):
         if not self.dry_run:
             self.logger.debug('running: ' + cmd)
-            subprocess.check_call(cmd, shell=True, env=self.env, preexec_fn=self.preexec_fn)
+            try:
+                subprocess.check_call(cmd, shell=True, env=self.env, preexec_fn=self.preexec_fn)
+            except:
+                self.logger.warn('failed: '+str(cmd))
+                raise
         else:
             self.logger.info('dry_run: ' + cmd)
         return

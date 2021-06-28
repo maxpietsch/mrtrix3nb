@@ -40,7 +40,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="exists" class="doc_header"><code>exists</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/core.py#L9" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>exists</code>(<strong><code>s</code></strong>, <strong><code>minsize_bytes</code></strong>=<em><code>100</code></em>, <strong><code>isdir</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="exists" class="doc_header"><code>exists</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/core.py#L9" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>exists</code>(<strong><code>s</code></strong>, <strong><code>minsize_bytes</code></strong>=<em><code>100</code></em>, <strong><code>isdir</code></strong>=<em><code>False</code></em>, <strong><code>force</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -78,7 +78,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Comp" class="doc_header"><code>class</code> <code>Comp</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/core.py#L42" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Comp</code>(<strong><code>dry_run</code></strong>=<em><code>False</code></em>, <strong><code>env</code></strong>=<em><code>None</code></em>, <strong><code>loglevel</code></strong>=<em><code>'INFO'</code></em>, <strong><code>progress</code></strong>=<em><code>True</code></em>, <strong><code>nice</code></strong>=<em><code>False</code></em>)</p>
+<h2 id="Comp" class="doc_header"><code>class</code> <code>Comp</code><a href="https://github.com/maxpietsch/mrtrix3nb/tree/master/mrtrix3nb/core.py#L48" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Comp</code>(<strong><code>dry_run</code></strong>=<em><code>False</code></em>, <strong><code>env</code></strong>=<em><code>None</code></em>, <strong><code>loglevel</code></strong>=<em><code>'INFO'</code></em>, <strong><code>progress</code></strong>=<em><code>True</code></em>, <strong><code>nice</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -94,6 +94,53 @@ nb_path: "00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">Comp</span><span class="p">(</span><span class="n">dry_run</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">run</span><span class="p">:</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">)</span>
+    <span class="n">run</span> <span class="o">+=</span> <span class="s1">&#39;mrinfo --version&#39;</span>
+    <span class="n">run</span> <span class="o">+=</span> <span class="s1">&#39;sleep 3&#39;</span>
+    <span class="n">run</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;dcminfo&#39;</span><span class="p">,</span> <span class="s1">&#39;--version&#39;</span><span class="p">]</span>
+    <span class="n">run</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:__main__:start
+&lt;ipython-input-19-e839eb7a6a3a&gt;:6: DeprecationWarning: The &#39;warn&#39; method is deprecated, use &#39;warning&#39; instead
+  run.logger.warn(&#39;done&#39;)
+WARNING:__main__:done
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -170,7 +217,7 @@ INFO:__main__:dry_run: dcminfo --version
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>/tmp/tmp9u2ekdqt
+<pre>/tmp/tmpent1x3vh
 
 </pre>
 </div>
