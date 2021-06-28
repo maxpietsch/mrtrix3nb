@@ -29,6 +29,15 @@ nb_path: "sh.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>also see: <a href="https://github.com/MRtrix3/mrtrix3/pull/1617">https://github.com/MRtrix3/mrtrix3/pull/1617</a> extends SH storage to allow storing SH along the 5th dimension of an image, one per shell. shconv now allows multiple ODF/response pairs (much like dwi2fod and mtnormalise do), and allows multi-shell responses (in which case it'll produce a 5D output). sh2amp can now accepts directions files in spherical or Cartesian coordinates, full-blown DW encoding files, or an image with a DW encoding in its header (required to handle multi-shell inputs).</p>
+<p>This allows forward-modelling of all our spherical deconvolution operations, e.g. for MSMT-CSD:</p>
+<p>shconv wm.mif wm.txt gm.mif gm.txt csf.mif csf.txt - | sh2amp - dwi_orig.mif dwi_predicted.mif Also in there are a few changes to docs handling, and minor updates to the tests.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
