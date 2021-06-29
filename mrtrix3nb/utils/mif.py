@@ -8,12 +8,14 @@ __all__ = ['Image', 'load_mrtrix', 'save_mrtrix']
 Load and save images in MRtrix format.
 
 Copyright (c) 2017 - Daan Christiaens (daan.christiaens@gmail.com)
+
+adapted: .mif.gz reading, header only loading, memory mapping, pathlib paths
 '''
 
 import numpy as np
 import copy
 import gzip
-
+from pathlib import Path
 
 _dtdict = {'Int8': '|i1', 'UInt8': '|u1', 'Int16': '=i2', 'UInt16': '=u2', 'Int16LE': '<i2', 'UInt16LE': '<u2', 'Int16BE': '>i2', 'UInt16BE': '>u2', 'Int32': '=i4', 'UInt32': '=u4', 'Int32LE': '<i4', 'UInt32LE': '<u4', 'Int32BE': '>i4', 'UInt32BE': '>u4', 'Float32': '=f4', 'Float32LE': '<f4', 'Float32BE': '>f4', 'Float64': '=f8', 'Float64LE': '<f8', 'Float64BE': '>f8', 'CFloat32': '=c8', 'CFloat32LE': '<c8', 'CFloat32BE': '>c8', 'CFloat64': '=c16', 'CFloat64LE': '<c16', 'CFloat64BE': '>c16'}
 _dtdict_inv = {v: k for k, v in _dtdict.items()}
@@ -97,6 +99,8 @@ class Image (object):
 
     def load(self, filename, read_data=True, memmap=False):
         ''' Load MRtrix .mif or .mif.gz file. '''
+        if isinstance(filename, Path):
+            filename = str(filename)
         is_gz = False
         if memmap:
             if is_gz:
@@ -168,6 +172,8 @@ class Image (object):
         ''' Save image to MRtix .mif file. '''
         if self.data is None:
             raise RuntimeError('Image data not set.')
+        if isinstance(filename, Path):
+            filename = str(filename)
         # write image header
         with open(filename, 'w', encoding='latin-1') as f:
             f.write('mrtrix image\n')

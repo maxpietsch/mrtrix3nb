@@ -4,6 +4,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"exists": "00_core.ipynb",
          "Comp": "00_core.ipynb",
+         "DummyRun": "00_core.ipynb",
          "Image": "mif.ipynb",
          "load_mrtrix": "mif.ipynb",
          "save_mrtrix": "mif.ipynb",
