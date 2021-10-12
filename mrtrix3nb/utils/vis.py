@@ -170,9 +170,9 @@ def polarplotstyle(axarr, plain=False, loc='N'):
         try:
             ax.set_theta_zero_location(loc)
             for tick in ax.yaxis.get_major_ticks():
-                tick.label.set_fontsize(6)
-                tick.label.set_alpha(1)
-                tick.label.set_color([0.1] * 3)
+                tick.label1.set_fontsize(6)
+                tick.label1.set_alpha(1)
+                tick.label1.set_color([0.1] * 3)
             ax.set_xticklabels([])
             [i.set_linewidth(0.1) for i in ax.spines.values()]
             ax.axes.spines['polar'].set_visible(False)
