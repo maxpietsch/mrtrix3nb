@@ -174,6 +174,8 @@ class Image (object):
             raise RuntimeError('Image data not set.')
         if isinstance(filename, Path):
             filename = str(filename)
+        if filename.endswithw('.gz'):
+            raise IOError("cannot save compressed, use gzip instead")
         # write image header
         with open(filename, 'w', encoding='latin-1') as f:
             f.write('mrtrix image\n')
@@ -278,3 +280,5 @@ def load_mrtrix(filename, **kwargs):
 def save_mrtrix(filename, image):
     ''' Save image in mrtrix format. '''
     image.save(filename)
+
+
