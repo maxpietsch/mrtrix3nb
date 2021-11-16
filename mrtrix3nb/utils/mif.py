@@ -174,7 +174,7 @@ class Image (object):
             raise RuntimeError('Image data not set.')
         if isinstance(filename, Path):
             filename = str(filename)
-        if filename.endswithw('.gz'):
+        if filename.endswith('.gz'):
             raise IOError("cannot save compressed, use gzip instead")
         # write image header
         with open(filename, 'w', encoding='latin-1') as f:
